@@ -1,0 +1,23 @@
+package practica.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import practica.dao.ClienteDao;
+
+
+
+@Controller
+public class HomeController {
+	
+	private ClienteDao cdao;
+	
+	@GetMapping("/")
+	public String mostrarHome(Model model) {
+		model.addAttribute("cliente", cdao.findAll() );
+		
+		return "home";
+	}
+
+}

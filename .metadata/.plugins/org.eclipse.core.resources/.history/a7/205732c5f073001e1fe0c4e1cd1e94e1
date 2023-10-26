@@ -1,0 +1,31 @@
+package practica.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import practica.dao.ClienteDao;
+
+@Controller
+@RequestMapping("/cliente")
+public class ClienteController {
+	
+	@Autowired
+	private ClienteDao cdao;
+	
+	@GetMapping("/verDetalle/{id}")
+	public string verCliente(@PathVariable("id") int idCliente, Model model  )) {
+		Cliente cliente = cdao.findBy(idCliente);
+		if(cliente != null) {
+			model.addAttribute("cliente", cliente);
+			return "verDetalle";
+		} else {
+			model.addAttribute("mensaje", "NO existe ese cliente");
+		}
+		
+	}
+	
+
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Detalle cliente</title>
+</head>
+<body>
+	<h1>Detalle de cliente</h1>
+	</hr>
+	<table>
+    <tr>
+        <th>Id cliente</th>
+        <th>Nombre</th>
+        <th>Facturacion</th>
+        <th>Empleados</th>
+    </tr>
+    <tr>
+        <th th:text="${cliente.idCliente}"></th>
+        <th th:text="${cliente.nombre}"></th>
+        <th th:text="${cliente.facturacionAnual}"></th>
+        <th th:text="${cliente.cantidadEmpleados}"></th>
+        <th th:text="${#dates.format(cliente.fechaAlta,'dd-MM-yy')}"></th>
+        <th th:text="${#dates.format(cliente.fechaCreacion,'dd-MM-yy')}"></th>
+    </tr>
+</table>
+
+	<a th:href="@{/}">Volver home</a>
+
+</body>
+</html>

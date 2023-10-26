@@ -1,0 +1,5 @@
+package practica.dao;
+
+public interface ClienteDao {
+
+}

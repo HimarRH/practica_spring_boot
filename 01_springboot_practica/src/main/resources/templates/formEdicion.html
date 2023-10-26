@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Alta nueva</title>
+</head>
+<hrbody>
+	<h1>Editar un cliente</h1>
+	</hr>
+	<form th:action="@{/cliente/editar/{id}(id=${cliente.idCliente})}" th:object="${cliente}" method="post">
+		<label> Nombre </label>
+		<input type="text" name="nombre" th:value="${cliente.nombre}" >
+		<label> Facturación </label>
+		<input type="text"  th:field="*{facturacionAnual}" >
+		<label> Cantidad de empleados </label>
+		<input type="text"  th:field="*{cantidadEmpleados}">
+		<label> Introduce la fecha </label>
+		<input type="date"  th:field="*{fechaCreacion}">
+		
+		<input type="submit" value="Enviar">
+	</form>
+	
+	<a th:href="@{/}">Volver a home</a>
+</body>
+</html>

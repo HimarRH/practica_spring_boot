@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Alta nueva</title>
+</head>
+<hrbody>
+	<h1>Dar de alta a un nuevo cliente</h1>
+	</hr>
+	<form th:action="@{/cliente/alta}" method="post">
+		<label> Nombre </label>
+		<input type="text" name="nombre" placeholder="Introduce un nombre">
+		<label> Facturación </label>
+		<input type="text" name="facturacionAnual" placeholder="Introduce la facturacion">
+		<label> Cantidad de empleados </label>
+		<input type="text" name="cantidadEmpleados" placeholder="Introduce la cantidad de empleados">
+		<input type="submit" value="Enviar">
+	</form>
+	
+	<p th:href="@{/}">Volver a home</p>
+</body>
+</html>

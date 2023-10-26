@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Detalle de cliente</h1>
+	</hr>
+	<table>
+    <tr>
+        <th>Id cliente</th>
+        <th>Nombre</th>
+        <th>Facturacion</th>
+        <th>Empleados</th>
+    </tr>
+    <tr>
+        <th th:text="${cliente.clienteId}"></th>
+        <th th:text="${cliente.nombre}"></th>
+        <th th:text="${cliente.facturacionAnual}"></th>
+        <th th:text="${cliente.cantidadEmpleados}"></th>
+    </tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+</head>
+<body>
+	<h1>Aplicación de clientes</h1>
+	<h3>Mensajes: <span th:text="${mensaje}"></span></h3>
+	
+	<h3>Listado de clientes</h3>
+	<a th:href="@{/clientes/verDetalle}"> Alta nueva</a>
+	<table border="1" width="80%" >
+    <tr>
+        <th>Nombre</th>
+        <th>Facturacion</th>
+        <th>Empleados</th>
+    </tr>
+    <tr th:each="cliente : ${clientes}">
+        <th th:text="${cliente.nombre}"></th>
+        <th th:text="${cliente.facturacionAnual}"></th>
+        <th th:text="${cliente.cantidadEmpleados}"></th>
+    
+        
+    </tr>
+</table>
+</body>
+</html>
